@@ -13,3 +13,6 @@ IncludeTemplateLangFile(__FILE__);
 </head>
 <body>
 <?php $APPLICATION->showPanel(); ?>
+<div class="top-left">
+	<a href="/groups/" class="btn btn-primary">На главную</a>
+</div>

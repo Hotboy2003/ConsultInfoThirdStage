@@ -1,6 +1,5 @@
 <?php
 IncludeModuleLangFile(__FILE__);
-
 ?>
 
 <form action="<?=$APPLICATION->GetCurPage()?>">
@@ -9,5 +8,5 @@ IncludeModuleLangFile(__FILE__);
 	<input type="hidden" name="id" value="alexobyn.groups">
 	<input type="hidden" name="uninstall" value="Y">
 	<input type="hidden" name="step" value="2">
-	<input type="submit" name="inst" value="<?=GetMessag('MOD_ININST_DEL')?>">
+	<input type="submit" name="inst" value="<?=GetMessage('MOD_UNINST_DEL')?>">
 </form>

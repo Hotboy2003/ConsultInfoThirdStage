@@ -35,26 +35,18 @@ class alexobyn_groups extends CModule
 	public function installFiles()
 	{
 		CopyDirFiles(
-			$_SERVER['DOCUMENT_ROOT'] . '/local/modules/alexobyn.groups/install/components',
-			$_SERVER['DOCUMENT_ROOT'] . '/local/components',
+			__DIR__ . '/components',
+			__DIR__ . '/../../../components',
 			true,
 			true
 		);
 
 		CopyDirFiles(
-			$_SERVER['DOCUMENT_ROOT'] . '/local/modules/alexobyn.groups/install/templates',
-			$_SERVER['DOCUMENT_ROOT'] . '/local/templates',
+			__DIR__ . '/templates',
+			__DIR__ . '/../../../templates',
 			true,
 			true
 		);
-	}
-
-	public function uninstallFiles()
-	{
-		DeleteDirFilesEx('/local/components/alexobyn');
-		DeleteDirFilesEx('/local/templates/main');
-
-		return false;
 	}
 
 	private function recursiveRemoveDir($dir)
@@ -75,6 +67,17 @@ class alexobyn_groups extends CModule
 		rmdir($dir);
 	}
 
+	public function uninstallFiles()
+	{
+		$componentsPath = __DIR__ . '/../../../components/alexobyn';
+		$templatesPath = __DIR__ . '/../../../templates/main';
+
+		$this->recursiveRemoveDir($componentsPath);
+		$this->recursiveRemoveDir($templatesPath);
+
+		return false;
+	}
+
 	public function doInstall()
 	{
 		global $USER, $APPLICATION;
@@ -90,7 +93,7 @@ class alexobyn_groups extends CModule
 
 		$APPLICATION->IncludeAdminFile(
 			Loc::getMessage('ALEXOBYN_GROUPS_INSTALL_TITLE'),
-			$_SERVER['DOCUMENT_ROOT'] . '/local/modules/' . $this->MODULE_ID . '/install/step.php'
+			__DIR__ . '/step.php'
 		);
 	}
 
@@ -111,17 +114,15 @@ class alexobyn_groups extends CModule
 		{
 			$APPLICATION->IncludeAdminFile(
 				Loc::getMessage('ALEXOBYN_GROUPS_UNINSTALL_TITLE'),
-				$_SERVER['DOCUMENT_ROOT'] . '/local/modules/' . $this->MODULE_ID . '/install/unstep1.php'
+				__DIR__ . '/unstep1.php'
 			);
 		}
 		elseif ($step===2)
 		{
 			$APPLICATION->IncludeAdminFile(
 				Loc::getMessage('ALEXOBYN_GROUPS_UNINSTALL_TITLE'),
-				$_SERVER['DOCUMENT_ROOT'] . '/local/modules/' . $this->MODULE_ID . '/install/unstep2.php'
+				__DIR__ . '/unstep2.php'
 			);
 		}
-
-
 	}
 }

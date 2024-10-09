@@ -36,7 +36,7 @@ class ComplexGroupList extends CBitrixComponent
 
 		if (strlen($componentPage) <= 0)
 		{
-			$componentPage = 'index';
+			$componentPage = '404';
 		}
 
 		CComponentEngine::InitComponentVariables(

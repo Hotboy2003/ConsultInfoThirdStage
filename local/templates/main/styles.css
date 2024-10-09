@@ -3,3 +3,11 @@
 	top: 30px;
 	left: 30px;
 }
+
+ .error-container {
+	 height: 100vh;
+	 display: flex;
+	 align-items: center;
+	 justify-content: center;
+	 text-align: center;
+ }

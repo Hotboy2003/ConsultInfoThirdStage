@@ -20,7 +20,9 @@ class GroupList extends CBitrixComponent
 
 	protected function fetchGroupList()
 	{
-			$groupsObject = CGroup::GetList();
+		$selectFields = ['ID', 'NAME', 'DESCRIPTION'];
+
+			$groupsObject = CGroup::GetList(($by = "id"), ($order = "asc"), ['SELECT' => $selectFields]);
 			$groups = [];
 
 			while ($group = $groupsObject->Fetch())

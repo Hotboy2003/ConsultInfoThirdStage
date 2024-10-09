@@ -6,7 +6,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)
 $this->setFrameMode(true);
 
 $APPLICATION->IncludeComponent(
-	"alexobyn:element",
+	"alexobyn:groups.detail",
 	"",
 	Array(
 		"CACHE_TIME" => "3600",

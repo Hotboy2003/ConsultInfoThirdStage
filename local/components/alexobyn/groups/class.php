@@ -5,13 +5,13 @@ use \Bitrix\Main\Data\Cache;
 class ComplexGroupList extends CBitrixComponent
 {
 	private $arComponentVariables = ['groups', 'element_id', 'element_code'];
-	private $arDefaultUrlTemplates404 = ['groups' => 'groups/', 'element' => 'groups/#ELEMENT_ID#/'];
+	private $arDefaultUrlTemplates404 = ['index' => 'groups/', 'detail' => 'groups/#ELEMENT_ID#/'];
 
 	public function executeComponent()
 	{
 		$arDefaultUrlTemplates404 = [
-			'groups' => 'groups.php',
-			'element' => 'groups/#ELEMENT_ID#',
+			'index' => 'groups.php',
+			'detail' => 'groups/#ELEMENT_ID#',
 		];
 		$arDefaultVariableAliases404 = [];
 		$arComponentVariables = ['ELEMENT_ID'];
@@ -36,7 +36,7 @@ class ComplexGroupList extends CBitrixComponent
 
 		if (strlen($componentPage) <= 0)
 		{
-			$componentPage = 'groups';
+			$componentPage = 'index';
 		}
 
 		CComponentEngine::InitComponentVariables(

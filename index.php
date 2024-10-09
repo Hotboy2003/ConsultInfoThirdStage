@@ -4,7 +4,7 @@ $APPLICATION->SetTitle("test");
 ?>
 
 <?$APPLICATION->IncludeComponent(
-	"alexobyn:complexGroup.list",
+	"alexobyn:groups",
 	"",
 	Array(
 		"CACHE_TIME" => "3600",
@@ -12,7 +12,7 @@ $APPLICATION->SetTitle("test");
 		"PAGE_TITLE" => "Список групп",
 		"SEF_FOLDER" => "/",
 		"SEF_MODE" => "Y",
-		"SEF_URL_TEMPLATES" => Array("groups"=>"groups/","element"=>"groups/#ELEMENT_ID#/")
+		"SEF_URL_TEMPLATES" => Array("index"=>"groups/","detail"=>"groups/#ELEMENT_ID#/")
 	)
 );?>
 

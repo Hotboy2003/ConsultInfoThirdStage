@@ -23,7 +23,7 @@ $arComponentParameters = array(
 				"DEFAULT" => "groups/",
 				"VARIABLES" => array(),
 			),
-			'element' => array(
+			'detail' => array(
 				"NAME" => "Элемент",
 				"DEFAULT" => 'groups/#ELEMENT_ID#/',
 				"VARIABLES" => array('ELEMENT_ID', 'element_code'),
